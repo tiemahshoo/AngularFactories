@@ -2,11 +2,11 @@
     $scope.inputCar = {};
     $scope.cars = CarFactory.activeCars;
     $scope.addCar = function () {
-        $scope.cars.push($scope.inputCar);
+        CarFactory.addCar($scope.inputCar);
         $scope.inputCar = {};
     };
 
     $scope.deleteCar = function (car) {
         CarFactory.deleteCar(car);
-    }
+    };
 });
