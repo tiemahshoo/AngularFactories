@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/readable_theme.min.css" rel="stylesheet" />
+    <link href="Content/site.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-controller="HomeController" class="well">
+        <div class="form-inline container well">
+            <input placeholder="Name..." class="form-control" ng-model="inputCar.name" />
+            <input placeholder="Color..." class="form-control" ng-model="inputCar.color" />
+            <input placeholder="Year..." class="form-control" ng-model="inputCar.year" />
+            <button class="btn btn-info" ng-click="addCar()">Submit</button>
+        </div>
+        <ul>
+            <li ng-repeat="c in cars" class="car-item" ng-click="deleteCar(c)">
+                {{c.name}} is {{c.color}} from the year: {{c.year}}
+            </li>
+        </ul>
+    </div>
+    <br />
+    <div ng-controller="OtherController" class="well">
+        <h4>Deleted Cars</h4>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Make</th>
+                    <th>Color</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="c in deletedCars">
+                    <td>{{c.name}}</td>
+                    <td>{{c.color}}</td>
+                    <td>{{c.year}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="App/Scripts/app.js"></script>
+    <script src="App/Scripts/Services/CarFactory.js"></script>
+    <script src="App/Scripts/Controllers/HomeController.js"></script>
+    <script src="App/Scripts/Controllers/OtherController.js"></script>
+</body>
+</html>

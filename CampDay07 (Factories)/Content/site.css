@@ -1,0 +1,8 @@
+﻿.car-item {
+
+}
+.car-item:hover {
+    text-decoration: underline;
+    color: red;
+    font-size: 1.2em;
+}
